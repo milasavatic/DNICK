@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"/>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+</head>
+<body>
+<div class="d-flex bg-primary justify-content-center align-items-center" style="height: 150px">
+    <img src="../../media/img.png"  alt=""/>
+</div>
+<br>
+<div class="py-5 d-flex justify-content-center bg-secondary-subtle">
+    <form method="post" action="{% url 'add' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-warning" type="submit">Додај</button>
+    </form>
+</div>
+</body>
+</html>
